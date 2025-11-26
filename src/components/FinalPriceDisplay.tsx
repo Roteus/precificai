@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface FinalPriceDisplayProps {
   totalCost: number;
   finalPrice: number;
