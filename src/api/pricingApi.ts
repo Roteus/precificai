@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { PricingRequest, PricingResponse, SectorOption } from '../types';
 
-const API_BASE_URL = 'http://localhost:3001/api/pricing';
+const API_BASE_URL = '/api/pricing';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -57,7 +57,7 @@ export const pricingApi = {
    * Health check
    */
   async healthCheck(): Promise<{ status: string; message: string }> {
-    const response = await axios.get('http://localhost:3001/health');
+    const response = await axios.get('/health');
     return response.data;
   }
 };
