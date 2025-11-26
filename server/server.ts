@@ -24,7 +24,7 @@ app.get('/health', (req, res) => {
 
 // Serve static files in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../../dist')));
+  app.use(express.static(path.join(__dirname, '../dist')));
   
   // Handle SPA routing
   app.get('*', (req, res) => {
@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === 'production') {
     if (req.path.startsWith('/api')) {
       return res.status(404).json({ error: 'Route not found' });
     }
-    res.sendFile(path.join(__dirname, '../../dist/index.html'));
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
   });
 } else {
   // 404 handler for dev mode or API routes
